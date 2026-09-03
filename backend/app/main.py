@@ -28,9 +28,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     try:
         await create_tables()
         logger.info("Database tables created/verified")
-        # Seed default users if DB is fresh
         await _seed_initial_users()
-        await _seed_initial_dataset()
     except Exception as exc:
         logger.error("Startup error", error=str(exc))
         raise
