@@ -411,46 +411,10 @@ export default function App() {
             >
               <Sliders size={14} /> Investigation Planner
             </button>
-
-            <button
-              onClick={() => setActiveTab('database')}
-              style={{
-                background: activeTab === 'database' ? 'var(--accent-indigo)' : 'transparent',
-                color: activeTab === 'database' ? '#fff' : 'var(--text-secondary)',
-                border: 'none', padding: '7px 14px', borderRadius: '6px', fontSize: '12px', fontWeight: '600', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', transition: 'all 0.2s'
-              }}
-            >
-              <Globe size={14} /> Threat & Evidence Datasets
-            </button>
-
-            <button
-              onClick={() => setActiveTab('audit')}
-              style={{
-                background: activeTab === 'audit' ? 'var(--accent-indigo)' : 'transparent',
-                color: activeTab === 'audit' ? '#fff' : 'var(--text-secondary)',
-                border: 'none', padding: '7px 14px', borderRadius: '6px', fontSize: '12px', fontWeight: '600', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', transition: 'all 0.2s'
-              }}
-            >
-              <FileText size={14} /> Policy & Audit Ledger
-            </button>
           </div>
 
           {/* Action Buttons */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <button className="btn-secondary" onClick={handleSeedRealDatasets} disabled={loading} style={{ border: '1px solid var(--accent-indigo)' }}>
-              <Zap size={14} color="var(--accent-amber)" /> Seed Real Datasets
-            </button>
-
-            <label className="btn-secondary" style={{ cursor: 'pointer' }}>
-              <Upload size={14} /> Ingest Evidence CSV
-              <input type="file" accept=".csv" onChange={(e) => handleFileUpload(e, 'upload-evidence')} style={{ display: 'none' }} />
-            </label>
-
-            <label className="btn-secondary" style={{ cursor: 'pointer' }}>
-              <Upload size={14} /> Ingest Threat CSV
-              <input type="file" accept=".csv" onChange={(e) => handleFileUpload(e, 'upload-threat')} style={{ display: 'none' }} />
-            </label>
-
             <button className="btn-primary" onClick={triggerDetection} disabled={loading}>
               <Play size={14} /> {loading ? 'Running Engine...' : 'Run Detection'}
             </button>
@@ -1165,81 +1129,9 @@ export default function App() {
           </div>
         )}
 
-        {/* Tab 4: Threat Intelligence & Evidence Datasets */}
-        {activeTab === 'database' && (
-          <div className="glass-panel" style={{ padding: '20px' }}>
-            <h2 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Globe size={18} color="var(--accent-cyan)" />
-              Real Threat Intelligence & WAF Evidence Datasets
-            </h2>
-            <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '20px' }}>
-              Real dataset repository containing network WAF traffic logs correlated against IP abuse threat intelligence records.
-            </p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              {/* Evidence Dataset (WAF Logs) */}
-              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--accent-cyan)', marginBottom: '10px' }}>
-                  WAF Evidence Logs Dataset
-                </h3>
-                <div style={{ fontSize: '11px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
-                  Features: <code>bytes_in, bytes_out, creation_time, src_ip, dst_ip, rule_names, detection_types</code>
-                </div>
-                <div style={{ background: 'rgba(0,0,0,0.4)', padding: '12px', borderRadius: '6px', fontSize: '11px', fontFamily: 'monospace' }}>
-                  <div>Total Ingested WAF Logs: <strong>282 records</strong></div>
-                  <div>Protocol: HTTPS (Port 443)</div>
-                  <div>Rule Trigger: Suspicious Web Traffic (waf_rule)</div>
-                  <div>Source Countries: US, CA, NL, DE, AE, AT, IL</div>
-                </div>
-              </div>
-
-              {/* Threat Dataset (IP Abuse Intel) */}
-              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--accent-rose)', marginBottom: '10px' }}>
-                  IP Abuse Threat Intelligence Dataset
-                </h3>
-                <div style={{ fontSize: '11px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
-                  Features: <code>ip_address, abuse_confidence_score, country_name, continent, risk_level, severity</code>
-                </div>
-                <div style={{ background: 'rgba(0,0,0,0.4)', padding: '12px', borderRadius: '6px', fontSize: '11px', fontFamily: 'monospace' }}>
-                  <div>Total Threat IP Records: <strong>56 Critical IPs</strong></div>
-                  <div>Abuse Confidence Score: <strong>100% (Critical)</strong></div>
-                  <div>Severity Rating: Level 4 / Critical</div>
-                  <div>Global Coverage: Netherlands, Sweden, Germany, US, China</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Tab: Investigation Planner */}
         {activeTab === 'planner' && (
           <InvestigationPlannerView apiBase={API_BASE} authToken={authToken} />
-        )}
-
-        {/* Tab 5: Audit Trail & Compliance */}
-        {activeTab === 'audit' && (
-          <div className="glass-panel" style={{ padding: '20px' }}>
-            <h2 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <FileText size={18} color="var(--accent-indigo)" />
-              Audit Trail & Traceability Ledger
-            </h2>
-            <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '16px' }}>
-              Complete record of all system events, plan generations, tool calls, and policy evaluations. Every entry is stamped with timestamps and actor metadata.
-            </p>
-
-            <div style={{ background: 'rgba(0,0,0,0.3)', padding: '16px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '11px', maxHeight: '420px', overflowY: 'auto' }}>
-              <div>[2026-09-02T07:56:13Z] system:db &rarr; DB_TABLES_VERIFIED (tables=14, dialect=sqlite)</div>
-              <div>[2026-09-02T07:56:13Z] system:seed &rarr; THREAT_INTEL_INGESTED (records=56, risk=Critical)</div>
-              <div>[2026-09-02T07:56:13Z] system:seed &rarr; WAF_EVIDENCE_INGESTED (logs=282, rule="Suspicious Web Traffic")</div>
-              <div>[2026-09-02T07:56:13Z] system:detector &rarr; ANOMALY_DETECTION_RUN (txns=381, alerts=282, matches=282)</div>
-              <div>[2026-09-02T07:56:13Z] system:invest.planner &rarr; PLAN_CREATED (plan_id=947e11fc-7aa8-4dcd)</div>
-              <div>[2026-09-02T07:56:13Z] system:hypothesis_generation &rarr; HYPOTHESES_GENERATED (new=4, total=4)</div>
-              <div>[2026-09-02T07:56:13Z] system:evidence_retrieval &rarr; EVIDENCE_GATHERED (new_evidence=9)</div>
-              <div>[2026-09-02T07:56:13Z] system:analysis_reasoning &rarr; ANALYSIS_COMPLETE (risk_level=CRITICAL, score=0.950)</div>
-              <div>[2026-09-02T07:56:13Z] system:decision_node &rarr; DECISION_REACHED (outcome=SAR_RECOMMENDED, policy_version=1.0)</div>
-            </div>
-          </div>
         )}
 
       </main>
