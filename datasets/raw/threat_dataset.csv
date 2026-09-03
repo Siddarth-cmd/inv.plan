@@ -1,0 +1,57 @@
+ip_address,abuse_confidence_score,country_code,country_name,continent,reported_date,risk_level,severity
+147.161.161.82,98,AE,United Arab Emirates,Asia,17-04-2026,High,3
+165.225.33.6,100,US,United States,North America,17-04-2026,Critical,4
+165.225.212.255,98,CA,Canada,North America,17-04-2026,High,3
+136.226.64.114,100,US,United States,North America,17-04-2026,Critical,4
+165.225.240.79,100,NL,Netherlands,Europe,17-04-2026,Critical,4
+136.226.77.103,100,CA,Canada,North America,17-04-2026,Critical,4
+165.225.26.101,98,DE,Germany,Europe,17-04-2026,High,3
+155.91.45.242,100,US,United States,North America,17-04-2026,Critical,4
+165.225.209.4,98,CA,Canada,North America,17-04-2026,High,3
+147.161.131.1,95,AT,Austria,Europe,17-04-2026,High,3
+136.226.67.101,95,US,United States,North America,17-04-2026,High,3
+94.188.248.74,100,IL,Israel,Asia,17-04-2026,Critical,4
+165.225.213.7,98,CA,Canada,North America,17-04-2026,High,3
+165.225.8.79,100,US,United States,North America,17-04-2026,Critical,4
+136.226.80.97,100,US,United States,North America,17-04-2026,Critical,4
+192.241.230.19,100,US,United States,North America,17-04-2026,Critical,4
+65.49.1.69,98,US,United States,North America,17-04-2026,High,3
+65.49.1.72,95,US,United States,North America,17-04-2026,High,3
+65.49.1.94,98,US,United States,North America,17-04-2026,High,3
+65.49.1.104,98,US,United States,North America,17-04-2026,High,3
+65.49.1.97,95,US,United States,North America,17-04-2026,High,3
+65.49.1.99,98,US,United States,North America,17-04-2026,High,3
+65.49.1.76,95,US,United States,North America,17-04-2026,High,3
+65.49.1.96,95,US,United States,North America,17-04-2026,High,3
+65.49.1.95,95,US,United States,North America,17-04-2026,High,3
+65.49.1.74,95,US,United States,North America,17-04-2026,High,3
+198.235.24.81,95,US,United States,North America,17-04-2026,High,3
+192.241.205.18,100,US,United States,North America,17-04-2026,Critical,4
+213.177.179.113,95,NL,Netherlands,Europe,17-04-2026,High,3
+172.94.9.48,95,NL,Netherlands,Europe,17-04-2026,High,3
+171.25.158.73,100,SE,Sweden,Europe,17-04-2026,Critical,4
+213.209.159.235,95,DE,Germany,Europe,17-04-2026,High,3
+163.53.168.23,98,CN,China,Asia,17-04-2026,High,3
+162.240.167.229,98,US,United States,North America,17-04-2026,High,3
+185.93.89.128,98,NL,Netherlands,Europe,17-04-2026,High,3
+109.123.240.147,100,FR,France,Europe,17-04-2026,Critical,4
+77.235.253.40,95,SE,Sweden,Europe,17-04-2026,High,3
+111.59.125.171,95,CN,China,Asia,17-04-2026,High,3
+77.90.185.48,100,LT,Lithuania,Europe,17-04-2026,Critical,4
+38.165.24.226,98,US,United States,North America,17-04-2026,High,3
+87.229.95.144,95,NL,Netherlands,Europe,17-04-2026,High,3
+165.154.6.86,100,HK,Hong Kong,Asia,17-04-2026,Critical,4
+103.172.236.241,95,VN,Vietnam,Asia,17-04-2026,High,3
+143.110.238.236,100,US,United States,North America,17-04-2026,Critical,4
+3.6.172.32,95,IN,India,Asia,17-04-2026,High,3
+2.57.122.197,98,RO,Romania,Europe,17-04-2026,High,3
+178.178.222.57,100,RU,Russia,Europe/Asia,17-04-2026,Critical,4
+187.212.38.18,98,MX,Mexico,North America,17-04-2026,High,3
+91.231.89.14,95,FR,France,Europe,17-04-2026,High,3
+164.92.150.95,100,NL,Netherlands,Europe,17-04-2026,Critical,4
+156.245.239.180,95,HK,Hong Kong,Asia,17-04-2026,High,3
+104.248.150.45,98,SG,Singapore,Asia,17-04-2026,High,3
+92.118.39.95,100,RO,Romania,Europe,17-04-2026,Critical,4
+120.48.154.88,95,CN,China,Asia,17-04-2026,High,3
+115.93.19.12,95,KR,South Korea,Asia,17-04-2026,High,3
+45.148.10.82,98,NL,Netherlands,Europe,17-04-2026,High,3
